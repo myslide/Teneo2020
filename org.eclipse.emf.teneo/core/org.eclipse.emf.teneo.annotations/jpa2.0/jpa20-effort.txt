@@ -1,0 +1,79 @@
+JPA 2.0 Upgrade
+
+== description per annotation: ==
+- Access --> Not Relevant
+- AssociationOverride(s):
+Added AssociationOverride.joinTable
+- AttributeOverride(s) --> No Change
+- Basic --> No Change
+- Cacheable --> New
+- CollectionTable --> New
+- Column --> No Change
+- DiscriminatorColumn --> No Change
+- DiscriminatorValue --> No Change
+- ElementCollection --> New
+- Embeddable --> No Change
+- Embedded --> No Change
+- EmbeddedId --> No Change
+- Entity --> No Change
+- Enumerated --> No Change
+- GeneratedValue --> No Change
+- Id --> No Change
+- IdClass --> No Change
+- Inheritance --> No Change
+- JoinColumn(s) --> No Change
+- JoinTable --> No Change
+- Lob --> No Change
+- ManyToMany --> No Change
+- ManyToOne --> No Change
+- MapKey --> No Change
+- MapKeyClass --> New
+- MapKeyColumn --> New
+- MapKeyEnumerated --> New
+- MapKeyJoinColumn --> New
+- MapKeyTemporal --> New
+- MappedSuperclass --> No Change
+- MapsId --> New
+- OneToMany:
+Added OneToMany.orphanRemoval
+- OneToOne:
+Added OneToOne.orphanRemoval
+- OrderBy --> No change
+- OrderColumn --> New
+- PrimaryKeyJoinColumn(s) --> No Change
+- SecondaryTable(s) --> No Change
+- SequenceGenerator:
+Added catalog and schema
+- Table --> No Change
+- TableGenerator --> No Change
+- Temporal --> No Change
+- Transient --> No Change
+- UniqueConstraint --> No Change
+- Version --> No Change
+
+== New and Changed Annotations  ==
+
+== Done ==
+- OneToMany:
+Added OneToMany.orphanRemoval
+- OneToOne:
+Added OneToOne.orphanRemoval
+- MapsId:
+Added support for multiple Id annotations
+Added support for generator=foreign for MapsId
+Composite/Embedded Id: if the MapsId has a value then generator foreign is not supported
+- OrderColumn
+- Cacheable
+> use the HbCache annotation, Cacheable does not work for hibernate in any case
+> https://hibernate.onjira.com/browse/HHH-5303
+- ElementCollection --> New
+- SequenceGenerator:
+Added catalog and schema
+- AssociationOverride(s):
+Added AssociationOverride.joinTable
+- CollectionTable --> New
+- MapKeyClass --> No change, is always supported as EMF ensures typed collection elements
+- MapKeyColumn --> New
+- MapKeyEnumerated --> New
+- MapKeyTemporal --> New
+- MapKeyJoinColumn --> New
